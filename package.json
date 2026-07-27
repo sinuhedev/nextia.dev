@@ -1,0 +1,20 @@
+{
+  "name": "nextia.dev",
+  "description": "description",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "vite build --mode"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.3",
+    "vite": "8.1.4"
+  },
+  "dependencies": {
+    "nextia": "10.0.3",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  }
+}
