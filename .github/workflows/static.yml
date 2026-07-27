@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_TITLE: Nextia Dev.
+          PUBLIC_TITLE: Nextia.
         run: npm run build prod
         # run: npm run build -- --base=/nextia.dev
 
