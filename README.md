@@ -22,6 +22,4 @@ node --run build <ENV>
  
 ```env
 PUBLIC_TITLE=dev
-PUBLIC_LOGGER=true
-PUBLIC_VIEW_TRANSITION=true
 ```

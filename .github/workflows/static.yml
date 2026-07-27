@@ -2,10 +2,10 @@ name: Deploy Vite Site to GitHub Pages
 
 on:
   push:
-    # branches:
-    #   - main
-    tags:
-      - "v*"
+    branches:
+      - main
+    # tags:
+    #   - "v*"
 
 permissions:
   contents: read
@@ -33,10 +33,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        env:
-          PUBLIC_TITLE: Nextia.
         run: npm run build prod
-        # run: npm run build -- --base=/nextia.dev
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
