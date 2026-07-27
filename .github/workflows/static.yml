@@ -33,6 +33,8 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          PUBLIC_TITLE: Nextia Dev.
         run: npm run build prod
         # run: npm run build -- --base=/nextia.dev
 
