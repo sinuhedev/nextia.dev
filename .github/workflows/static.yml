@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_TITLE: ${{ secrets.PUBLIC_TITLE }}
+          PUBLIC_TITLE: ${{ vars.PUBLIC_TITLE }}
         run: npm run build prod
 
       - name: Upload Pages artifact
