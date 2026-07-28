@@ -5,7 +5,7 @@ import './style.css'
 export default function Nextia({ className, style }) {
   return (
     <article className={css('Nextia', className)} style={style}>
-      <Svg src={nextiaSvg} viewBox="0 0 940 540" className="nextia-svg" />
+      <Svg src="/logo.svg" viewBox="0 0 940 540" className="nextia-svg" />
     </article>
   )
 }
