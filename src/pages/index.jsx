@@ -49,32 +49,6 @@ export default function Pages() {
         i18n
       }}
     >
-      <header style={{ display: 'flex', gap: '20px', margin: '20px' }}>
-        <Icon id="exit" width="24" className="animate" />
-
-        <Translate />
-
-        <I18n value="page.name" args={['Sinuhe', 'Maceda', 'Bouchan']} />
-      </header>
-
-      <aside className="m-2">
-        <Link href="/" className="mr-2">
-          /
-        </Link>
-
-        <Link href="#/" className="mr-2">
-          /home
-        </Link>
-
-        <Link href="#/env" className="mr-2">
-          /env
-        </Link>
-
-        <Link href="#/dashboard" className="mr-2">
-          /not-found
-        </Link>
-      </aside>
-
       <main ref={viewTransitionRef} className="m-2">
         {Page && <Page qs={qs.queryString} resize={resize} />}
       </main>

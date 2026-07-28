@@ -1,3 +1,4 @@
+import Nextia from './Nextia'
 import Translate from './ui/Translate'
 
-export { Translate }
+export { Nextia, Translate }

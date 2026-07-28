@@ -1,7 +1,5 @@
 const initialState = {
-  i18n: window.localStorage.getItem('i18n'),
-  loading: false,
-  num: 0
+  i18n: window.localStorage.getItem('i18n')
 }
 
 function changeI18n({ payload, put }) {
@@ -10,22 +8,7 @@ function changeI18n({ payload, put }) {
   window.localStorage.setItem('i18n', value)
 }
 
-function increment({ state, put }) {
-  put({ num: state.num + 1 })
-}
-
-function decrement({ state, put }) {
-  put({ num: state.num - 1 })
-}
-
-function zero({ payload, put }) {
-  put({ num: payload.value })
-}
-
 export default {
   initialState,
-  changeI18n,
-  increment,
-  decrement,
-  zero
+  changeI18n
 }

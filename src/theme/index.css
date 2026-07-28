@@ -11,7 +11,7 @@
   --primary-color: #344188;
   --primary-color-50: #3441887a;
   --link: #77a6c2;
-  --body-bg: #282c34;
+  --body-bg: #1a1c1f;
   --body-color: #a8a8a8;
   --font-family: "Roboto";
 }
@@ -50,4 +50,8 @@ a {
 
 .justify-content {
   justify-content: space-around;
+}
+
+.text-center {
+  text-align: center;
 }
