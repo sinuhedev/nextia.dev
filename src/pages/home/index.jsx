@@ -8,8 +8,13 @@ export default function HomePage() {
   return (
     <section>
       <br />
+
       <Nextia />
-      <h2 className="text-center">nextia.dev</h2>
+
+      <div className="text-center">
+        <h2>nextia.dev</h2>
+        <p>npm i nextia</p>
+      </div>
     </section>
   )
 }
