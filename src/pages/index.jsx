@@ -1,44 +1,28 @@
 import i18n from 'assets/i18n.json'
-import icons from 'assets/icons.svg?raw'
-import { Translate } from 'components'
-import {
-  I18n,
-  Icon,
-  Link,
-  Pagex,
-  useFx,
-  usePage,
-  useQueryString,
-  useResize
-} from 'nextia'
+import icons from 'assets/icons.svg'
+import { Pagex, useFx, usePage } from 'nextia'
 import { useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions.js'
 
-export default function Pages() {
-  const pages = useFx(functions, (initialState) => {
-    return {
-      num: 2087
-    }
-  })
-  const { state, fx } = pages
+const PAGES = {
+  home: () => import('./home/index.jsx'),
+  //
+  notFound: () => import(`./not-found.jsx`)
+}
 
+export default function Pages() {
+  const pages = useFx({}, functions)
+
+  const { qs } = pages
   const viewTransitionRef = useRef()
-  const qs = useQueryString()
-  const resize = useResize(env.WINDOW_RESIZE)
+
   const Page = usePage({
-    hash: qs.hash,
-    homePage: env.HOME_PAGE,
-    importPage: async (path) => {
-      if (path === undefined) return await import(`./not-found.jsx`)
-      if (path.length === 1) return await import(`./${path[0]}/index.jsx`)
-      if (path.length === 2)
-        return await import(`./${path[0]}/${path[1]}/index.jsx`)
-    },
-    viewTransition: {
-      ref: viewTransitionRef,
-      name: env.VIEW_TRANSITION_NAME
-    }
+    hashPage: qs.hash,
+    homePage: '#/home',
+    currentPage: (path) => PAGES[path.join('/')] ?? PAGES.notFound,
+    viewTransition: viewTransitionRef,
+    viewTransitionName: env.VIEW_TRANSITION_NAME
   })
 
   return (
@@ -50,7 +34,7 @@ export default function Pages() {
       }}
     >
       <main ref={viewTransitionRef} className="m-2">
-        {Page && <Page qs={qs.queryString} resize={resize} />}
+        {Page && <Page context={pages} qs={qs} />}
       </main>
     </Pagex>
   )
